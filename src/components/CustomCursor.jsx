@@ -56,8 +56,8 @@ const CustomCursor = () => {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         
         // Neon ambient glow
-        ctx.shadowBlur = this.size * 2.5;
-        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 0;
+        ctx.shadowColor = 'transparent';
         
         ctx.fillStyle = this.color;
         ctx.fill();
@@ -66,11 +66,9 @@ const CustomCursor = () => {
     }
 
     const neonColors = [
-      '#22d3ee', // Cyan
-      '#6366f1', // Indigo
-      '#a855f7', // Purple
-      '#3b82f6', // Blue
-      '#06b6d4'  // Dark Teal
+      '#191919', // Graphite
+      '#F75708', // Orange
+      '#E4DCCF', // Biscuit
     ];
 
     const spawnParticles = (x, y, count, type = 'trail') => {
@@ -138,7 +136,7 @@ const CustomCursor = () => {
     let animationId;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = 'screen';
+      ctx.globalCompositeOperation = 'source-over';
 
       const particles = particlesRef.current;
       for (let i = particles.length - 1; i >= 0; i--) {
@@ -159,23 +157,23 @@ const CustomCursor = () => {
         // Outer ring for clickable elements
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 10, 0, Math.PI * 2);
-        ctx.strokeStyle = '#a855f7';
-        ctx.lineWidth = 1.5;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#a855f7';
+        ctx.strokeStyle = '#F75708';
+        ctx.lineWidth = 2;
+        ctx.shadowBlur = 0;
+        ctx.shadowColor = 'transparent';
         ctx.stroke();
         
         // Inner dot
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = '#191919';
         ctx.fill();
       } else {
         ctx.beginPath();
-        ctx.arc(mouse.x, mouse.y, 3, 0, Math.PI * 2);
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#22d3ee';
-        ctx.fillStyle = '#ffffff';
+        ctx.arc(mouse.x, mouse.y, 4, 0, Math.PI * 2);
+        ctx.shadowBlur = 0;
+        ctx.shadowColor = 'transparent';
+        ctx.fillStyle = '#F75708';
         ctx.fill();
       }
       ctx.restore();

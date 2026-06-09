@@ -19,13 +19,8 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-end pt-32 pb-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden"
+      className="min-h-screen max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pt-32 pb-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden"
     >
-      {/* Decorative Interactive Blobs specific to Hero */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-[20%] left-[15%] w-72 h-72 rounded-full bg-blue-500/5 blur-[80px]" />
-        <div className="absolute bottom-[20%] right-[15%] w-80 h-80 rounded-full bg-indigo-500/5 blur-[90px]" />
-      </div>
 
       {/* Edge-to-Edge Mobile Image with Bottom Fade (Mobile Only) */}
       <div
@@ -42,53 +37,38 @@ const Hero = () => {
         />
       </div>
 
-      {/* Fixed Full-height Image on the Left with Fade Effect and Scroll Blur (Desktop Only) */}
+      {/* Circular Frame Image on the Left (Desktop Only) */}
       <div
-        className="hidden lg:block fixed top-0 -left-[10%] lg:-left-[15%] w-[110%] lg:w-[60%] h-full z-[-1] pointer-events-none"
-        style={{ filter: `blur(${blurValue}px)`, transition: 'filter 0.1s ease-out' }}
+        className="hidden lg:block relative w-[350px] h-[350px] xl:w-[450px] xl:h-[450px] rounded-full overflow-hidden border-4 border-graphite shadow-[8px_8px_0px_#191919] z-0 flex-shrink-0 lg:mr-12"
       >
         <img
           src={profilePic}
           alt={personalInfo.name}
-          className="w-full h-full object-cover border-none"
-          style={{
-            maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)'
-          }}
-        />
-        {/* Dark Purple Gradient Overlay that fades in with the blur */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-950/60 to-transparent mix-blend-overlay"
-          style={{
-            opacity: blurValue / 20,
-            transition: 'opacity 0.1s ease-out',
-            maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)'
-          }}
+          className="w-full h-full object-cover object-top"
         />
       </div>
 
       {/* Content on the Right (No Box, No Animation) */}
-      <div className="max-w-3xl w-full relative z-10 lg:mr-12 mt-[45vh] lg:mt-0">
+      <div className="max-w-2xl xl:max-w-3xl w-full relative z-10 mt-[45vh] lg:mt-0">
         <div className="flex flex-col justify-center text-left">
           {/* Main Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
-            <span className="block text-slate-400 text-sm sm:text-base md:text-lg font-mono tracking-[0.2em] uppercase mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-heading font-extrabold text-graphite tracking-tight mb-6">
+            <span className="block text-graphite text-sm sm:text-base md:text-lg font-mono tracking-[0.2em] uppercase mb-3">
               Initializing Experience
             </span>
-            Hi, I'm <span className="block lg:inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 font-black lg:whitespace-nowrap mt-2 lg:mt-0">
-              {personalInfo.name}
+            Hi, I'm <span className="block lg:inline-block text-graphite font-black mt-2 lg:mt-0">
+              {personalInfo.name.replace('Muthukumar K', 'Muthukumar\u00A0K')}
             </span>
           </h1>
 
           {/* Role Text */}
-          <div className="flex items-center justify-start space-x-2 text-indigo-300 text-sm sm:text-base md:text-lg font-medium mb-6 font-mono">
-            <Terminal size={18} className="text-indigo-400 flex-shrink-0" />
-            <span>{personalInfo.role}</span>
+          <div className="flex flex-wrap items-center justify-start gap-2 text-graphite text-sm sm:text-base md:text-lg font-bold mb-6 font-mono bg-biscuit border-2 border-graphite w-auto max-w-full px-4 py-2 shadow-[4px_4px_0px_#191919]">
+            <Terminal size={18} className="text-orange flex-shrink-0" />
+            <span className="break-words">{personalInfo.role}</span>
           </div>
 
           {/* Description */}
-          <p className="text-slate-300 text-sm sm:text-base mb-10 leading-relaxed max-w-xl">
+          <p className="text-graphite text-sm sm:text-base mb-10 leading-relaxed max-w-xl font-medium">
             {personalInfo.description}
           </p>
 
@@ -96,7 +76,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
             <a
               href="#about"
-              className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full hover:brightness-110 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-white bg-graphite border-2 border-graphite hover:bg-orange hover:text-graphite shadow-[4px_4px_0px_#191919] hover:shadow-[6px_6px_0px_#191919] hover:-translate-y-1 transition-all duration-300"
             >
               Begin Journey
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -104,9 +84,9 @@ const Hero = () => {
 
             <a
               href="#projects"
-              className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-slate-300 hover:text-white glass-pill rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-graphite bg-white border-2 border-graphite hover:bg-biscuit shadow-[4px_4px_0px_#191919] hover:shadow-[6px_6px_0px_#191919] hover:-translate-y-1 transition-all duration-300"
             >
-              <Sparkles className="mr-2 w-4 h-4 text-indigo-400 group-hover:animate-pulse" />
+              <Sparkles className="mr-2 w-4 h-4 text-orange" />
               View Creations
             </a>
           </div>
@@ -115,11 +95,11 @@ const Hero = () => {
 
       {/* Story Prompt Indicator at Bottom */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 pointer-events-none select-none z-10">
-        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-slate-500 animate-pulse">
+        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-graphite font-bold">
           Scroll to Advance
         </span>
-        <div className="w-[1.5px] h-10 bg-gradient-to-b from-slate-600 to-transparent relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-cyan-400 animate-[bounce_2s_infinite]" />
+        <div className="w-[2px] h-10 bg-graphite relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-orange animate-[bounce_2s_infinite]" />
         </div>
       </div>
     </section>

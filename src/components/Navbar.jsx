@@ -24,6 +24,7 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Achievements', href: '#achievements' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -32,26 +33,26 @@ const Navbar = () => {
         }`}
     >
       <nav
-        className={`mx-auto max-w-7xl rounded-3xl transition-all duration-500 relative border ${isScrolled
-            ? 'bg-slate-950/95 border-white/10 shadow-2xl backdrop-blur-3xl py-3 px-6'
-            : 'bg-slate-950/90 border-white/10 shadow-lg backdrop-blur-3xl py-4 px-6 md:px-10'
+        className={`mx-auto max-w-7xl transition-all duration-500 relative border-2 border-graphite ${isScrolled
+            ? 'bg-white shadow-[4px_4px_0px_#191919] py-3 px-6'
+            : 'bg-white shadow-[8px_8px_0px_#191919] py-4 px-6 md:px-10'
           }`}
       >
         {/* Scroll Progress Bar */}
-        <div className="absolute bottom-0 left-6 right-6 h-[2px] bg-white/5 rounded-full overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-biscuit overflow-hidden border-t-2 border-graphite">
           <div
-            className="h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 transition-all duration-75 shadow-[0_0_8px_#3b82f6]"
+            className="h-full bg-orange transition-all duration-75"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center pb-1">
           {/* Logo */}
-          <a href="#home" className="group flex items-center space-x-2 text-lg sm:text-xl font-bold tracking-tighter text-slate-100 whitespace-nowrap">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 group-hover:brightness-125 transition-all duration-300">
+          <a href="#home" className="group flex items-center space-x-2 text-lg sm:text-xl font-heading font-bold tracking-tighter text-graphite whitespace-nowrap">
+            <span className="text-graphite group-hover:text-orange transition-all duration-300">
               Mukilan Muthukumar K
             </span>
-            <span className="text-cyan-400 animate-pulse">.</span>
+            <span className="text-orange animate-pulse">.</span>
           </a>
 
           {/* Desktop Menu */}
@@ -60,7 +61,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium px-4 py-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-300"
+                className="text-sm font-bold px-4 py-2 border-2 border-transparent hover:border-graphite hover:bg-biscuit transition-all duration-300 text-graphite"
               >
                 {link.name}
               </a>
@@ -71,14 +72,14 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+              className="p-2 text-graphite hover:bg-biscuit border-2 border-transparent hover:border-graphite transition-all"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -87,7 +88,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-          className={`md:hidden absolute top-full left-0 right-0 mt-3 bg-slate-950/95 border border-white/15 backdrop-blur-3xl rounded-2xl overflow-hidden transition-all duration-300 origin-top shadow-2xl ${mobileMenuOpen
+          className={`md:hidden absolute top-full left-0 right-0 mt-3 bg-white border-2 border-graphite overflow-hidden transition-all duration-300 origin-top shadow-[4px_4px_0px_#191919] ${mobileMenuOpen
               ? 'opacity-100 scale-100 translate-y-0'
               : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
             }`}
@@ -98,7 +99,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                className="block px-4 py-2.5 text-base font-bold text-graphite hover:bg-biscuit border-2 border-transparent hover:border-graphite transition-colors"
               >
                 {link.name}
               </a>

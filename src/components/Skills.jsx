@@ -7,8 +7,8 @@ const SkillCategory = ({ title, items, icon: CategoryIcon }) => {
   return (
     <div className="mb-20 last:mb-0">
       {/* Category Header */}
-      <h3 className="text-xl sm:text-2xl font-bold text-white mb-8 flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+      <h3 className="text-xl sm:text-2xl font-bold font-heading text-graphite mb-8 flex items-center space-x-3">
+        <div className="w-10 h-10 bg-white border-2 border-graphite flex items-center justify-center text-graphite shadow-[2px_2px_0px_#191919]">
           <CategoryIcon size={20} />
         </div>
         <span>{title}</span>
@@ -24,19 +24,19 @@ const SkillCategory = ({ title, items, icon: CategoryIcon }) => {
               direction={index % 2 === 0 ? 'left' : 'right'}
             >
               <div 
-                className="group flex items-start p-5 rounded-2xl glass-card border border-white/5 cursor-default hover:scale-[1.02] transition-all duration-300 h-full"
+                className="group flex items-start p-5 bg-white border-2 border-graphite cursor-default hover:-translate-y-1 transition-all duration-300 h-full shadow-[4px_4px_0px_#191919] hover:shadow-[6px_6px_0px_#191919] hover:bg-biscuit"
               >
-                {/* Icon Container with dynamic glow */}
-                <div className="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-slate-800/80 border border-white/15 text-indigo-400 group-hover:bg-gradient-to-br group-hover:from-indigo-600 group-hover:to-blue-600 group-hover:text-white group-hover:border-indigo-400/30 transition-all duration-300">
-                  <Icon size={20} className="transition-transform group-hover:scale-110" />
+                {/* Icon Container */}
+                <div className="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-white border-2 border-graphite text-graphite transition-all duration-300 shadow-[2px_2px_0px_#191919]">
+                  <Icon size={20} className="transition-transform group-hover:scale-110 group-hover:text-orange" />
                 </div>
                 
                 {/* Text: Name and Description */}
                 <div className="ml-4">
-                  <h4 className="font-bold text-slate-200 group-hover:text-white transition-colors text-sm sm:text-base leading-snug">
+                  <h4 className="font-bold font-heading text-graphite transition-colors text-sm sm:text-base leading-snug">
                     {skill.name}
                   </h4>
-                  <p className="text-xs text-slate-400 mt-1.5 leading-relaxed group-hover:text-slate-300 transition-colors line-clamp-2">
+                  <p className="text-xs font-medium text-graphite mt-1.5 leading-relaxed transition-colors line-clamp-2">
                     {skill.description}
                   </p>
                 </div>
@@ -55,22 +55,17 @@ const Skills = () => {
       id="skills" 
       className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      {/* Decorative Blur Orbs */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-[30%] right-[20%] w-72 h-72 rounded-full bg-indigo-500/5 blur-[80px] animate-float-slow" />
-        <div className="absolute bottom-[20%] left-[10%] w-80 h-80 rounded-full bg-cyan-500/5 blur-[90px] animate-float-fast" />
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-24">
-          <span className="text-[11px] font-mono tracking-[0.3em] text-indigo-400 uppercase block mb-3">
+          <span className="text-[11px] font-mono tracking-[0.3em] font-bold text-orange uppercase block mb-3">
             Chapter 02 // The Arsenal
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black text-white mb-4">
+          <h2 className="text-3xl sm:text-5xl font-black font-heading text-graphite mb-4">
             Technical Expertise
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-2 bg-graphite mx-auto"></div>
         </div>
 
         {/* Waterfall Categories */}

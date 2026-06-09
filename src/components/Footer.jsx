@@ -4,18 +4,18 @@ import { Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-slate-950/40 py-12 border-t border-white/5 backdrop-blur-md z-10">
+    <footer className="relative bg-white py-12 border-t-4 border-graphite z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-6 md:mb-0 text-center md:text-left">
-          <div className="text-xl sm:text-2xl font-bold tracking-tighter text-white mb-2 whitespace-nowrap">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">Mukilan Muthukumar K</span>
-            <span className="text-cyan-400">.</span>
+          <div className="text-xl sm:text-2xl font-bold tracking-tighter text-graphite font-heading mb-2 whitespace-nowrap">
+            <span className="text-graphite">Mukilan Muthukumar K</span>
+            <span className="text-orange">.</span>
           </div>
-          <p className="text-slate-400 text-sm">© 2026 {personalInfo.name}. All rights reserved.</p>
+          <p className="text-graphite font-bold text-sm">© 2026 {personalInfo.name}. All rights reserved.</p>
         </div>
 
         <div className="flex space-x-6">
-          <a href="https://www.linkedin.com/in/mukilan-muthukumar-6a9a23314/" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
+          <a href="https://www.linkedin.com/in/mukilan-muthukumar-6a9a23314/" className="text-graphite hover:text-blue-500 transition-colors p-2 hover:bg-biscuit border-2 border-transparent hover:border-graphite hover:shadow-[2px_2px_0px_#191919] hover:-translate-y-1">
             <span className="sr-only">LinkedIn</span>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -23,14 +23,14 @@ const Footer = () => {
               <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
-          <a href="https://github.com/MukilanMK" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
+          <a href="https://github.com/MukilanMK" className="text-graphite hover:text-orange transition-colors p-2 hover:bg-biscuit border-2 border-transparent hover:border-graphite hover:shadow-[2px_2px_0px_#191919] hover:-translate-y-1">
             <span className="sr-only">GitHub</span>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
               <path d="M9 18c-4.51 2-5-2-7-2" />
             </svg>
           </a>
-          <a href="mailto:muki6854@gmail.com" className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
+          <a href="mailto:muki6854@gmail.com" className="text-graphite hover:text-red-500 transition-colors p-2 hover:bg-biscuit border-2 border-transparent hover:border-graphite hover:shadow-[2px_2px_0px_#191919] hover:-translate-y-1">
             <span className="sr-only">Email</span>
             <Mail size={20} />
           </a>
