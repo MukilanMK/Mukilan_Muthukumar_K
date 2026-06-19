@@ -89,7 +89,7 @@ const Projects = () => {
         {filteredProjects.length > 0 ? (
           <div className="relative ml-4 lg:ml-0 max-w-6xl mx-auto">
             {/* Glowing central timeline wire */}
-            <div className="absolute left-[11px] lg:left-1/2 top-0 bottom-0 w-[4px] bg-graphite -translate-x-1/2 z-0" />
+            <div className="absolute left-[11px] top-0 bottom-0 w-[4px] bg-graphite -translate-x-1/2 z-0" />
 
             {filteredProjects.map((project, index) => {
               const isEven = index % 2 === 0;
@@ -98,21 +98,19 @@ const Projects = () => {
               return (
                 <ScrollReveal
                   key={project.id}
-                  direction={isEven ? 'left' : 'right'}
+                  direction="right"
                   className="mb-16 lg:mb-20 last:mb-0 mt-8"
                 >
                   <div className="relative group">
-                    <div className={`lg:flex items-center justify-between w-full ${isEven ? 'lg:flex-row-reverse' : ''
-                      }`}>
+                    <div className={`lg:flex items-center justify-between w-full`}>
 
                       {/* Glowing Node Point */}
-                      <div className="absolute left-[11px] lg:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
+                      <div className="absolute left-[11px] -translate-x-1/2 flex items-center justify-center z-20">
                         <div className="w-6 h-6 bg-orange border-[4px] border-graphite transition-all duration-500" />
                       </div>
 
                       {/* Card Container */}
-                      <div className={`pl-10 lg:pl-0 lg:w-[45%] ${isEven ? 'lg:text-left' : 'lg:text-right'
-                        }`}>
+                      <div className={`pl-10 lg:pl-10 lg:w-full lg:text-left`}>
                         <div
                           className={`flex flex-col folder-card overflow-visible relative transition-all duration-500 mt-4 group-hover:-translate-y-2 ${theme.border
                             } ${theme.glow}`}
@@ -124,7 +122,7 @@ const Projects = () => {
                           {/* Details Block */}
                           <div className="w-full p-6 sm:p-8 flex flex-col justify-between">
                             <div>
-                              <div className={`flex items-center justify-between mb-4 ${!isEven && 'lg:flex-row-reverse'}`}>
+                              <div className={`flex items-center justify-between mb-4`}>
                                 <span className={`inline-block px-3 py-1 text-[10px] font-mono font-bold tracking-wider ${theme.badge}`}>
                                   {project.domain}
                                 </span>
@@ -133,16 +131,16 @@ const Projects = () => {
                                 </span>
                               </div>
 
-                              <h3 className={`text-xl sm:text-2xl font-black font-heading text-graphite mb-2 tracking-tight leading-tight ${!isEven && 'lg:text-right'}`}>
+                              <h3 className={`text-xl sm:text-2xl font-black font-heading text-graphite mb-2 tracking-tight leading-tight`}>
                                 {project.title}
                               </h3>
 
-                              <div className={`flex items-center text-xs font-mono font-bold text-graphite mb-4 ${!isEven && 'lg:justify-end'}`}>
+                              <div className={`flex items-center text-xs font-mono font-bold text-graphite mb-4`}>
                                 <Calendar size={13} className="mr-1.5" />
                                 <span>{project.period}</span>
                               </div>
 
-                              <div className={`flex items-center text-[10px] font-mono font-bold text-graphite mb-4 bg-white p-1.5 px-2 border-2 border-graphite w-fit ${!isEven && 'lg:ml-auto'}`}>
+                              <div className={`flex items-center text-[10px] font-mono font-bold text-graphite mb-4 bg-white p-1.5 px-2 border-2 border-graphite w-fit`}>
                                 <span className="text-orange font-black mr-1.5">User:</span>
                                 {project.targetUser}
                               </div>
@@ -150,10 +148,10 @@ const Projects = () => {
 
                             <div className="space-y-4 mt-auto">
                               <div>
-                                <h4 className={`text-[10px] font-mono tracking-wider font-bold text-graphite uppercase mb-2 ${!isEven && 'lg:text-right'}`}>
+                                <h4 className={`text-[10px] font-mono tracking-wider font-bold text-graphite uppercase mb-2`}>
                                   Tech Stack
                                 </h4>
-                                <div className={`flex flex-wrap gap-1.5 ${!isEven && 'lg:justify-end'}`}>
+                                <div className={`flex flex-wrap gap-1.5`}>
                                   {project.technologies.map((tech, idx) => (
                                     <span
                                       key={idx}
@@ -165,22 +163,22 @@ const Projects = () => {
                                 </div>
                               </div>
 
-                              <div className={`pt-3 border-t-2 border-graphite flex ${!isEven && 'justify-end'}`}>
+                              <div className={`pt-3 border-t-2 border-graphite flex lg:hidden`}>
                                 <button
                                   onClick={() => openModal(project)}
-                                  className={`group/btn inline-flex items-center space-x-1.5 text-xs font-bold text-orange hover:text-graphite transition-colors ${!isEven && 'flex-row-reverse space-x-reverse'}`}
+                                  className={`group/btn inline-flex items-center space-x-1.5 text-xs font-bold text-orange hover:text-graphite transition-colors`}
                                 >
                                   <span>Deep Dive Specifications</span>
-                                  <ArrowRight size={14} className={`transition-transform ${isEven ? 'group-hover/btn:translate-x-1' : 'group-hover/btn:-translate-x-1'}`} />
+                                  <ArrowRight size={14} className={`transition-transform group-hover/btn:translate-x-1`} />
                                 </button>
+                              </div>
+                              <div className="hidden lg:block mt-6 pt-4 border-t-2 border-graphite text-graphite font-medium text-sm sm:text-base leading-relaxed">
+                                {project.description}
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-
-                      {/* Empty spacer for grid alignment */}
-                      <div className="hidden lg:block lg:w-[45%]" />
 
                     </div>
                   </div>

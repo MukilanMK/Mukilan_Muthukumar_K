@@ -37,7 +37,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="pt-12 pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -144,7 +144,7 @@ const About = () => {
               return (
                 <ScrollReveal direction="right" key={idx}>
                   <div
-                    className="group folder-card p-6 flex items-start space-x-5 cursor-default mt-4"
+                    className="group folder-card p-6 flex items-start space-x-5 cursor-default mt-4 shadow-[8px_8px_0px_#191919] transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_0px_#191919]"
                   >
                     <div className="folder-tab">
                       CORE_{idx + 1}

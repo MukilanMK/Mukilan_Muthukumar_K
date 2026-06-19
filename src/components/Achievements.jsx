@@ -26,11 +26,11 @@ const Achievements = () => {
           <div className="w-20 h-2 bg-graphite mx-auto"></div>
         </div>
 
-        {/* Story timeline circuit */}
-        <div className="relative ml-4 md:ml-0">
+        {/* Container for responsive layout */}
+        <div className="relative ml-4 md:ml-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 md:gap-y-12 md:auto-rows-fr mt-12 md:mt-16">
           
-          {/* Glowing central timeline wire */}
-          <div className="absolute left-[11px] md:left-1/2 top-0 bottom-0 w-[4px] bg-graphite -translate-x-1/2 z-0" />
+          {/* Glowing central timeline wire - Mobile Only */}
+          <div className="absolute left-[11px] md:hidden top-0 bottom-0 w-[4px] bg-graphite -translate-x-1/2 z-0" />
 
           {achievements.map((achievement, index) => {
             const isEven = index % 2 === 0;
@@ -40,19 +40,17 @@ const Achievements = () => {
               <ScrollReveal 
                 direction={isEven ? 'left' : 'right'} 
                 key={achievement.id}
-                className="mb-12 md:mb-16 last:mb-0"
+                className="mb-12 md:mb-0 h-full"
               >
                 <div 
-                  className="relative group"
+                  className="relative group h-full"
                   onMouseEnter={() => setHoveredIdx(index)}
                   onMouseLeave={() => setHoveredIdx(null)}
                 >
-                <div className={`md:flex items-center justify-between w-full ${
-                  isEven ? 'md:flex-row-reverse' : ''
-                }`}>
+                <div className={`md:flex h-full w-full`}>
                   
-                  {/* Glowing Node Point */}
-                  <div className="absolute left-[11px] md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
+                  {/* Glowing Node Point - Mobile Only */}
+                  <div className="absolute left-[11px] md:hidden -translate-x-1/2 flex items-center justify-center z-20">
                     <div className={`w-6 h-6 bg-orange border-[4px] transition-all duration-500 ${
                       isHovered 
                         ? 'border-graphite scale-125' 
@@ -61,22 +59,18 @@ const Achievements = () => {
                   </div>
 
                   {/* Card Container */}
-                  <div className={`pl-10 md:pl-0 md:w-[45%] ${
-                    isEven ? 'md:text-left' : 'md:text-right'
-                  }`}>
+                  <div className={`pl-10 md:pl-0 w-full h-full`}>
                     <div 
-                      className={`folder-card mt-4 p-6 sm:p-8 overflow-visible relative transition-all duration-300 shadow-[8px_8px_0px_#191919] ${
+                      className={`folder-card h-full flex flex-col mt-4 md:mt-0 p-6 sm:p-8 overflow-visible relative transition-all duration-300 shadow-[8px_8px_0px_#191919] ${
                         isHovered 
                           ? 'bg-white -translate-y-2' 
                           : ''
                       }`}
                     >
-                      <div className="folder-tab text-[10px]">A_{index + 1}</div>
+
 
                       {/* Header Title with Trophy icon */}
-                      <div className={`flex items-center space-x-2 text-graphite mb-3 ${
-                        !isEven && 'md:justify-end md:space-x-reverse'
-                      }`}>
+                      <div className={`flex items-center space-x-2 text-graphite mb-3`}>
                         <Trophy size={20} className={isHovered ? 'animate-bounce text-orange' : 'text-graphite'} />
                         <h3 className="text-lg sm:text-xl font-bold font-heading text-graphite group-hover:text-orange transition-colors duration-300">
                           {achievement.title}
@@ -84,9 +78,7 @@ const Achievements = () => {
                       </div>
 
                       {/* Calendar date tag */}
-                      <div className={`flex items-center text-xs font-mono font-bold text-graphite mb-4 ${
-                        !isEven && 'md:justify-end md:space-x-reverse'
-                      }`}>
+                      <div className={`flex items-center text-xs font-mono font-bold text-graphite mb-4`}>
                         <Calendar size={13} className="mr-1.5" />
                         <span>{achievement.date}</span>
                       </div>
@@ -98,9 +90,6 @@ const Achievements = () => {
 
                     </div>
                   </div>
-
-                  {/* Empty spacer for grid alignment */}
-                  <div className="hidden md:block w-[45%]" />
 
                 </div>
                 </div>

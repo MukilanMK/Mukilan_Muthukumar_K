@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pt-32 pb-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden"
+      className="min-h-screen max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pt-32 pb-10 px-4 sm:px-6 lg:px-12 relative overflow-hidden"
     >
 
       {/* Edge-to-Edge Mobile Image with Bottom Fade (Mobile Only) */}
@@ -93,15 +93,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Story Prompt Indicator at Bottom */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 pointer-events-none select-none z-10">
-        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-graphite font-bold">
-          Scroll to Advance
-        </span>
-        <div className="w-[2px] h-10 bg-graphite relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-orange animate-[bounce_2s_infinite]" />
-        </div>
-      </div>
+
     </section>
   );
 };
